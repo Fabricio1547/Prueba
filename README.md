@@ -1,48 +1,15 @@
 # Entrevista
-
-Aplicación Android nativa en Java y XML. Android mínimo: 6.0 (API 23).
-
-## Ejecutar
-1. En Android Studio abre esta carpeta y espera la sincronización de Gradle.
-2. Conecta el Realme 7 por USB, activa Depuración USB y acepta la autorización del equipo.
-3. Selecciona el teléfono en la barra superior y pulsa Run (triángulo verde).
-4. Si el dispositivo no aparece, usa Tools > Troubleshoot Device Connections.
-
-## Flujo implementado
-- Información: celular obligatorio de 1 a 8 dígitos; carnet obligatorio de 1 a 10 dígitos; complemento opcional de 0 a 2 caracteres ASCII alfanuméricos.
-- Antes del punto de conexión se presenta una explicación y el diálogo oficial de Android para permitir ubicación precisa o aproximada. Si Android bloquea la solicitud después de varios rechazos, se ofrece una vía a los ajustes de la aplicación.
-- La aplicación no lee la ubicación del dispositivo en esta demostración; solo valida el permiso antes de continuar.
-- Autenticación: recomendaciones de iluminación basadas en la captura. Ilustración vectorial provisional.
-- Siguiente en autenticación informa que la verificación de identidad aún no está disponible.
-
-## Servicio pendiente
-DemoService.submitInformation es una demostración local documentada en el código: no hace peticiones, no obtiene coordenadas y no realiza verificación de identidad.
-Para integrarlo hacen falta URL, método HTTP, formato de solicitud/respuesta, errores, autenticación y requisitos de ubicación. La verificación facial requiere además especificaciones del proveedor y sus permisos. No hay credenciales reales ni tokens guardados.
-
-## Archivos principales
-- MainActivity.java y activity_main.xml: información, validación y permisos.
-- AuthenticationActivity.java y activity_authentication.xml: recomendaciones y fin de demostración.
-- InputValidator.java: reglas de entrada.
-- DemoService.java: punto de conexión pendiente.
-- AndroidManifest.xml: permiso y registro de actividades.
-
-## Pruebas
-Compilar y verificar desde PowerShell en esta carpeta:
-
-    $env:JAVA_HOME = 'C:\Program Files\Android\Android Studio\jbr'
-    .\gradlew.bat :app:assembleDebug :app:testDebugUnitTest :app:lintDebug
-
-Prueba manual en el celular:
-1. Pulsa Siguiente con los campos vacíos: deben aparecer errores.
-2. Pega letras en celular/carnet y símbolos en complemento: se deben filtrar.
-3. Verifica que no acepte más de 8, 10 y 2 caracteres respectivamente.
-4. Usa 71234567, 412345 y complemento vacío o 1D.
-5. Rechaza el permiso: no debe continuar ni llamar al punto de conexión.
-6. Permite ubicación: debe avanzar a la pantalla de autenticación.
-7. Activa ubicación y pulsa Siguiente: debe abrir Autenticación.
-8. Pulsa Siguiente: debe indicar que la verificación aún no está disponible.
-9. Prueba con el teclado abierto, gira el celular y vuelve desde Autenticación.
-
-APK de depuración: app/build/outputs/apk/debug/app-debug.apk después de una compilación exitosa.
+Nombre: Fabricio Medina Viscarra
 
 
+1. Una Activity es un componente de Android que proporciona un punto de entrada a la interfaz con la que interactúa el usuario. Gestiona su ciclo de vida y puede alojar vistas XML, fragments o contenido hecho con Jetpack Compose
+2. Un Fragment representa una sección modular de la interfaz dentro de una Activity. Tiene su propio ciclo de vida y permite organizar pantallas, navegación y componentes reutilizables
+3. C) OnCreate(). Se llama cuando se crea la Activity; después vienen onStart() y onResume()
+4. B) RecyclerView. Está pensado para mostrar listas y reutilizar las vistas al desplazarse.
+5. El Adapter enlaza la colección de datos con el RecyclerView. Crea los ViewHolder y asigna a cada uno los datos que debe mostrar. Si cambian los elementos de la lista, el adapter permite reflejar esos cambios en la interfaz
+6. El ViewModel mantiene el estado y la lógica de presentación de la pantalla. Recibe las acciones del usuario, obtiene los datos mediante un repositorio y expone a la interfaz estados como carga, contenido o error. Esto evita concentrar toda la lógica en la Activity o el Fragment
+7. El LiveData es un contenedor de datos observable y consciente del ciclo de vida. La interfaz puede observarlo para actualizarse cuando cambian los datos, respetando el estado activo de la Activity o el Fragment. En proyectos Kotlin modernos también puedo exponer el estado mediante StateFlow
+8. ViewBinding genera una clase con referencias tipadas a las vistas de cada layout XML. Así puedo acceder a ellas sin llamar repetidamente a findViewById, y varios errores de identificador o tipo se detectan al compilar
+9. En mis proyectos Android he utilizado diferentes bibliotecas para consumir APIs REST. En uno usé “Ktor Client”, hacía las peticiones HTTP desde la capa de datos y procesaba las respuestas JSON para mostrarlas en la aplicación. En otro proyecto puede utilizar Retrofit, desempeña actividades similares, pero permite definir los endpoints mediante interfaces y anotaciones como @GET y @POST. Con Ktor configuraba el cliente y las peticiones de forma más directa. Para elegir entre ambos, tendría en cuenta la arquitectura y las dependencias que ya utiliza el proyecto.
+10. Retrofit es una biblioteca cliente HTTP. Defino en una interfaz las operaciones de la API, como GET o POST, y sus parámetros. Después puedo combinarla con un convertidor para transformar el JSON recibido en objetos de Kotlin y llamar a esos métodos desde la capa de datos
+11.  B) JSON. Se utiliza normalmente en APIs REST.
