@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/authRoot"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:background="#12AD6A">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <Button android:id="@+id/backButton" android:layout_width="wrap_content" android:layout_height="48dp" android:text="‹ Volver" android:textColor="#FFFFFF" android:backgroundTint="#12AD6A" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="24dp" android:orientation="vertical">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="PASO 2 / 6" android:textColor="#FFFFFF" android:textSize="12sp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Autenticación" android:textColor="#FFFFFF" android:textSize="22sp" android:textStyle="bold" />
+            <ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="8dp" android:layout_marginTop="12dp" android:max="6" android:progress="2" android:progressTint="#705084" android:progressBackgroundTint="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:padding="24dp" android:orientation="vertical" android:gravity="center_horizontal" android:background="@drawable/panel_background">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:text="Antes de comenzar con la prueba de autenticación, te recomendamos:" android:textColor="#705084" android:textStyle="bold" android:textSize="16sp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center" android:text="Sitúate en un lugar con buena iluminación." android:textColor="#444444" android:textStyle="bold" android:textSize="16sp" />
+            <ImageView android:layout_width="match_parent" android:layout_height="260dp" android:layout_marginTop="24dp" android:src="@drawable/lighting_guide" android:contentDescription="Rostro centrado e iluminado uniformemente" />
+            <Space android:layout_width="1dp" android:layout_height="24dp" android:layout_weight="1" />
+            <Button android:id="@+id/nextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:text="Siguiente" android:textColor="#FFFFFF" android:backgroundTint="#12AD6A" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+

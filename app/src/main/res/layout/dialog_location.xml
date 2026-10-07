@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:padding="24dp" android:background="@drawable/panel_background">
+    <ImageView android:layout_width="100dp" android:layout_height="100dp" android:layout_marginTop="12dp" android:src="@drawable/location_warning" android:importantForAccessibility="no" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:gravity="center" android:text="Activa tu ubicación" android:textColor="#333333" android:textStyle="bold" android:textSize="20sp" />
+    <TextView android:id="@+id/locationMessage" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:gravity="center" android:text="Para continuar con la creación de tu Bille, necesitamos permiso para acceder a la ubicación de este dispositivo." android:textColor="#777777" android:textSize="14sp" />
+    <Button android:id="@+id/enableLocationButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:minHeight="48dp" android:text="Continuar" android:textColor="#FFFFFF" android:backgroundTint="#12AD6A" />
+    <TextView android:id="@+id/openLocationSettings" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:gravity="center" android:padding="10dp" android:text="Abrir ajustes de la app" android:textColor="#705084" android:visibility="gone" />
+</LinearLayout>
